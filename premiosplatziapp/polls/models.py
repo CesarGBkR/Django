@@ -1,3 +1,4 @@
+from email.policy import default
 from pyexpat import model
 from django.db import models
 
@@ -7,3 +8,5 @@ class Question(models.Model):
 
 class Choices(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    choice_text = models.CharField(max_length=250)
+    votes = models.ImageField(default=0)
